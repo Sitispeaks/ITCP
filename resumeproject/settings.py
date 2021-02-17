@@ -13,6 +13,7 @@ from typing import cast
 from decouple import config
 from pathlib import Path
 import os
+import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY ='!(h)8w@qrj(!g6pk=)xqd^7f#=iqi5&s6kyl8ev7+vsi0cg6+v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['itcareerpoint.herokuapp.com','127.0.0.1']
 
@@ -153,7 +154,7 @@ MEDIA_URL='/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
 
-
+django_heroku.settings(locals())
 #S3 BUCKETS CONFIG
 
 # AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY')
