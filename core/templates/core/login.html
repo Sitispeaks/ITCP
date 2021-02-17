@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %} {% block content %}
+<div class="container mt-5">
+  <h1 class="text-warning mb-5 border-bottom">LOGIN PAGE</h1>
+  <form action="" method="post" novalidate>
+    {% csrf_token %} 
+    {% for fm in form %} {{ fm.label_tag }} {{fm}}
+    <small class="text-warning">{{fm.errors|striptags}}</small> <br />
+
+    {% endfor %}
+
+    <input type="submit" class="btn btn-warning" value="Login" />
+
+    {% if form.non_field_errors %} {% for error in form.non_field_errors %}
+    <div class="alert alert-warning alert-dismissible mt-3 fade show" role="alert">
+      {{error}}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+
+    {% endfor %} {% endif %}
+  </form>
+</div>
+
+{% endblock content %}

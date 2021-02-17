@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}  {% block content %}
+
+<div class="container mt-5">
+  <h1 class="text-warning mb-5 border-bottom">MATERIALS</h1>
+
+
+
+  {% for post in file %} 
+  <div class="card m-5" style="width:155px;">
+    <h5 class="card-header bg-info text-black">{{post.batch}}</h5>
+    <div class="card-body bg-white">
+      <h5 class="card-title"> {{post.desc}} </h5>
+      <h6>{{ post.date_posted|date:'D, d M,Y' }}</h6>
+      {% comment %} <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> {% endcomment %}
+      <a href="{{post.notes.url}}"   download="{{post.notes.url}}" class="btn btn-info text-black">Download</a> 
+    </div>
+  </div>
+   {% endfor %} 
+
+</div>
+
+{% endblock content %}

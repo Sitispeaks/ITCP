@@ -1,0 +1,30 @@
+{% load static %}
+<div class="border-end border-warning h-100">
+  <div class="text-center">
+    <img
+      src="{%static 'core/images/itcp_logo.png' %}"
+      alt=""
+      class="img-fluid rounded-circle mt-5"
+      height="100px"
+      width="100px"
+    />
+    <h3 class="text-white fs-4 mt-3">IT Career Point</h3>
+  </div>
+  <hr class="border border-light" />
+  <nav class="nav flex-column text-center">
+    <a href="{% url 'home' %}" class="nav-link {{ home }}">Home</a>
+    <a href="{% url 'courses' %}" class="nav-link {{ course }}">Courses</a>
+    <a href="{% url 'alumnis' %}" class="nav-link {{ alumni }}">Alumnis</a>
+    <a href="{% url 'contact' %}" class="nav-link {{ contacts }}">Contact</a>
+    {% if request.user.is_authenticated %}
+    <a href="{% url 'materials' %}" class="nav-link {{ material }}"
+      >Materials</a
+    >
+    <a href="{% url 'logout' %}" class="nav-link" {{ Logout }}>Logout</a>
+    {% else %}
+    <a href="{% url 'login' %}" class="nav-link {{ Login }}">Login</a>
+    {% endif %}
+    <a href="{% url 'admin:index' %}" class="nav-link">Admin panel</a>
+  </nav>
+  
+</div>

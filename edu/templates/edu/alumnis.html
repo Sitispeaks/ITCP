@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %} {% load static %} {% block content %}
+<div class="container mt-5">
+  <h1 class="text-warning mb-2 border-bottom">ALUMNIS</h1>
+  <div class="row text-center">
+    {% for alu in alumnis %}
+      <div class="col-sm-3 col-xs-3  col-md-3">
+          <div class="card border-info text-center mb-3 bg-dark" style="width: 18rem;">
+            <div class="card-body">
+              <h3 class="card-title text-info">{{ alu.stu_name }}</h3>
+              <h5 class="card-text text-info">{{ alu.college }}</h5>
+            </div>
+          </div>
+        </div>
+      {% if forloop.counter|divisibleby:4 and forloop.counter > 0 and not forloop.last %}
+        </div><div class="row">
+      {% endif %} 
+    {% endfor %}
+  </div>
+</div>
+    {% endblock content %}
+    
+  </div>
+</div>

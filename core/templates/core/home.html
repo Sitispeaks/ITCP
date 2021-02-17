@@ -1,0 +1,74 @@
+{% extends 'core/base.html' %} {% load static %} {% block content %}
+<div class="mt-5">
+  <div class="row">
+    <div class="text-center col-md-5 col-sm-5 col-xs-5">
+      <img src="{% static 'core/images/subrat.jpeg' %}" alt="" class="img-thumbnail" width="250px" height="150px"
+        srcset="" />
+    </div>
+
+    {% comment %} Notice area {% endcomment %}
+    <div class="text-center mt-5 col-md-5 col-sm-5 col-xs-5">
+      <h1 class="text-warning text-center mt-5">Notice</h1>
+      <div id="bodydesc" style="
+          margin-left: auto;
+          margin-right: auto;
+          width: 360px;
+          height: 190px;
+          overflow-y: scroll;
+        ">
+        {% for holi in holidays %}
+        <div class="container123">
+          <p class="text-white mx-1">{{holi.holiday}}</p>
+          <img src="{% static 'core/images/new.gif' %}" class="mx-1" width="35px" align="absmiddle" alt="New" />
+        </div>
+        <hr />
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-3 text-white mx-5 text-justify">
+    <h1 class="font-weight-bold">Hello,</h1>
+
+    <div class="px-2" style="line-height: 2rem">
+      <p style="text-indent: 100px">
+        I am
+        <b class="text-warning">Subrat Kumar Chand</b> having Lorem ipsum dolor
+        sit amet consectetur adipisicing elit. Perspiciatis maxime iure sit
+        incidunt inventore! Aliquid itaque natus ex officia laborum rem
+        repellendus eligendi, quidem, blanditiis tempora ipsum voluptas
+        recusandae veritatis. Lorem ipsum, dolor sit amet consectetur
+        adipisicing elit. Quidem, vero aliquid deserunt, consectetur repudiandae
+        sapiente ipsum excepturi obcaecati aut illo impedit. Illo distinctio
+        saepe voluptate quaerat placeat perspiciatis, incidunt vero.<br />
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id, harum
+        dolores distinctio facere error eos aliquid, facilis minima nisi, ipsam
+        praesentium quibusdam? Nemo eius laudantium adipisci soluta iste nostrum
+        amet.<br />
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      </p>
+    </div>
+  </div>
+  <div class="text-center">
+    <a href="{% url 'contact' %}" class="btn btn-outline-warning my-3 mr-5">Contact Us</a>
+    <a href="{% url 'contact' %}" class="btn btn-outline-info my-3">Reach Me</a>
+    <div class="container"></div>
+  </div>
+</div>
+<div class="footer mt-5">
+  <div class="container">
+    <div class="copyright text-white text-center">
+      © 2021<strong> IT Career Point</strong> - All Rights Reserved.
+    </div>
+  </div>
+  <div class="copyright text-center">
+    <strong class="text-white">Developed by</strong>
+    <a class="text-warning" style="text-decoration: none;" href="mailto:aloknath.ar@gmail.com">SITIKANTA & ALOK</a>
+  </div>
+  <div class="container text-center ">
+    <a class="text-warning"   style="text-decoration: none;" href="mailto:aloknath.ar@gmail.com">CONTACT US</a>
+  </div>
+</div>
+</div>
+
+{% endblock content %}
