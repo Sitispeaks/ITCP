@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'core',
     'edu',
     'services',
-    'storages',
+    # 'storages',
     # 'gunicorn',
 ]
 
