@@ -27,7 +27,7 @@ SECRET_KEY ='!(h)8w@qrj(!g6pk=)xqd^7f#=iqi5&s6kyl8ev7+vsi0cg6+v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['itcareerpoint.herokuapp.com','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['itcareerpoint.herokuapp.com','localhost','127.0.0.1','13.232.37.146']
 
 
 # mail config
@@ -50,13 +50,13 @@ INSTALLED_APPS = [
     'core',
     'edu',
     'services',
-    'storages',
-    # 'gunicorn',
+    # 'storages',
+    'gunicorn',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -166,4 +166,5 @@ django_heroku.settings(locals())
 # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 # AWS_S3_HOST = "s3.us-east-2.amazonaws.com" 
 # AWS_S3_REGION_NAME = "us-east-2"
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# DEFAULT_FILE_STORAGE='django.core.files.storage.FileSystemStorage'
