@@ -9,12 +9,12 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-import  logging
-from typing import cast
+
+
 from decouple import config
 from pathlib import Path
 import os
-import django_heroku
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY ='!(h)8w@qrj(!g6pk=)xqd^7f#=iqi5&s6kyl8ev7+vsi0cg6+v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['itcareerpoint.herokuapp.com','localhost','127.0.0.1','13.232.37.146']
 
 
@@ -50,13 +50,12 @@ INSTALLED_APPS = [
     'core',
     'edu',
     'services',
-    # 'storages',
+    'storages',
     'gunicorn',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -154,17 +153,14 @@ MEDIA_URL='/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
 
-django_heroku.settings(locals())
-#S3 BUCKETS CONFIG
-
-# AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY')
-# AWS_SECRET_ACCESS_KEY =config('AWS_SECRET_KEY')
-# AWS_STORAGE_BUCKET_NAME = 'itcp-bucket'
-# AWS_S3_FILE_OVERWRITE = False
-# AWS_DEFAULT_ACL = 'public-read'
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# AWS_S3_HOST = "s3.us-east-2.amazonaws.com" 
-# AWS_S3_REGION_NAME = "us-east-2"
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# DEFAULT_FILE_STORAGE='django.core.files.storage.FileSystemStorage'
+# django_heroku.settings(locals())
+# S3 BUCKETS CONFIG
+AWS_ACCESS_KEY_ID = 'AKIA27LZQ4Y5MVNQC5MY'
+AWS_SECRET_ACCESS_KEY ='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'
+AWS_STORAGE_BUCKET_NAME = 'itcp-bucket'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = 'public-read'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_S3_HOST = "s3.us-east-2.amazonaws.com" 
+AWS_S3_REGION_NAME = "us-east-2"
