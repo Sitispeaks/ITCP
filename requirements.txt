@@ -44,7 +44,7 @@ s3transfer==0.3.4
 six==1.15.0
 soupsieve==2.0.1
 sqlparse==0.3.0
-urllib3==1.25.9
+urllib3==1.26.5
 virtualenv==20.2.2
 virtualenv-clone==0.5.4
 Werkzeug==1.0.1
