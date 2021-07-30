@@ -28,5 +28,5 @@ This site is hosted on aws EC2 instance with aws RDS(postgresql) working as a da
 </p>
 
 
-### Submitted By
+### Developed By
 [Sitikanta Panigrahi](https://github.com/sitispeaks) 
